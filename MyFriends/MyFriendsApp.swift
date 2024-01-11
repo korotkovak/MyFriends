@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct MyFriendsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView(
+                store: Store(initialState: HomeViewStore.State()) {
+                    HomeViewStore()
+                }
+            )
         }
     }
 }
