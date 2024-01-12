@@ -12,38 +12,53 @@ struct HomeView: View {
 
     let store: StoreOf<HomeViewStore>
 
-    @State private var friendName: String = ""
+    @State private var name: String = ""
 
     var body: some View {
-        NavigationStack {
-            WithViewStore(self.store, observe: \.friends) { viewStore in
+        NavigationStackStore(self.store.scope(state: \.path, action: \.path)) {
+            WithViewStore(self.store, observe: { $0 }) { viewStore in
                 VStack {
-                    TextField("Friend's name", text: $friendName)
-                        .textFieldStyle(.roundedBorder)
-                        .padding(20)
+                    CustomTF(
+                        text: $name,
+                        image: "person.fill",
+                        placeholder: "Friend's name"
+                    )
 
                     Button {
-                        store.send(.addFriendButtonTapped(friendName))
+                        store.send(.addNewFriend(name))
                     } label: {
                         Text("Add a friend")
+                            .frame(maxWidth: .infinity)
                             .fontWeight(.semibold)
-                            .padding(.horizontal, 60)
                     }
-                    .padding(.vertical, 20)
-                    .background(.purple)
-                    .foregroundStyle(.white)
-                    .clipShape(Capsule())
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 12)
+                    .buttonStyle(.borderedProminent)
+                    .tint(.green)
+                    .controlSize(.large)
 
                     Spacer(minLength: 20)
+
                     List {
-                        ForEach(viewStore.state) { friend in
-                            Text(friend.name)
+                        ForEach(viewStore.state.friends) { friend in
+                            NavigationLink(state: DetailViewStore.State(friend: friend)) {
+                                Text(friend.name)
+                            }
+                            .buttonStyle(.borderless)
+                            .swipeActions {
+                                Button("Delete") {
+                                    viewStore.send(.deleteFriend(friend.id))
+                                }
+                                .tint(.red)
+                            }
                         }
                     }
                 }
                 .navigationTitle("MyFriends")
                 .navigationBarTitleDisplayMode(.inline)
             }
+        } destination: { store in
+            DetailView(store: store)
         }
     }
 }

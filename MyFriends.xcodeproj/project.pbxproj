@@ -14,6 +14,9 @@
 		C1366CF92B5028E100954B88 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = C1366CF82B5028E100954B88 /* ComposableArchitecture */; };
 		C1366CFB2B502F5C00954B88 /* HomeViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1366CFA2B502F5C00954B88 /* HomeViewStore.swift */; };
 		C1366CFD2B50317A00954B88 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1366CFC2B50317A00954B88 /* Friend.swift */; };
+		C1366CFF2B51141400954B88 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1366CFE2B51141400954B88 /* DetailView.swift */; };
+		C1366D012B51142700954B88 /* DetailViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1366D002B51142700954B88 /* DetailViewStore.swift */; };
+		C1366D032B515E2F00954B88 /* CustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1366D022B515E2F00954B88 /* CustomTF.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		C1366CF02B50289C00954B88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C1366CFA2B502F5C00954B88 /* HomeViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewStore.swift; sourceTree = "<group>"; };
 		C1366CFC2B50317A00954B88 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		C1366CFE2B51141400954B88 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		C1366D002B51142700954B88 /* DetailViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewStore.swift; sourceTree = "<group>"; };
+		C1366D022B515E2F00954B88 /* CustomTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTF.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,9 @@
 				C1366CFC2B50317A00954B88 /* Friend.swift */,
 				C1366CFA2B502F5C00954B88 /* HomeViewStore.swift */,
 				C1366CEB2B50289B00954B88 /* HomeView.swift */,
+				C1366D002B51142700954B88 /* DetailViewStore.swift */,
+				C1366CFE2B51141400954B88 /* DetailView.swift */,
+				C1366D022B515E2F00954B88 /* CustomTF.swift */,
 				C1366CED2B50289C00954B88 /* Assets.xcassets */,
 				C1366CEF2B50289C00954B88 /* Preview Content */,
 			);
@@ -151,9 +160,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1366D012B51142700954B88 /* DetailViewStore.swift in Sources */,
+				C1366D032B515E2F00954B88 /* CustomTF.swift in Sources */,
 				C1366CEC2B50289B00954B88 /* HomeView.swift in Sources */,
 				C1366CFB2B502F5C00954B88 /* HomeViewStore.swift in Sources */,
 				C1366CEA2B50289B00954B88 /* MyFriendsApp.swift in Sources */,
+				C1366CFF2B51141400954B88 /* DetailView.swift in Sources */,
 				C1366CFD2B50317A00954B88 /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

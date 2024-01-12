@@ -10,4 +10,6 @@ import Foundation
 struct Friend: Equatable, Identifiable {
     var id: UUID
     var name: String
+    var birthday: String
+    var gender: String
 }
